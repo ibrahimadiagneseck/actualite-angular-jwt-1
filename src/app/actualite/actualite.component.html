@@ -1,0 +1,155 @@
+<div class="container">
+
+  <div class="row mb-2 mt-2 text-center">
+
+    <div class="col-md-3"></div>
+
+    <div class="col-md-6">
+      <h1 style="font-family: 'Courier New', Courier, monospace;">Les actualités du jour</h1>
+      <small *ngIf="titleAction$ | async as title">{{ title }}</small>
+    </div>
+
+    <div class="col-md-3"></div>
+  </div>
+
+  <!-- nav bar -->
+  <nav class="navbar navbar-expand-md breadcrumb">
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+
+      <div class="nav nav-pills">
+        <a class="nav-item active nav-link ml-1" (click)="changeTitle('Accueil')" data-toggle="tab" href="#accueil">
+          <i class="fa fa-home"></i>
+          Accueil
+        </a>
+
+        <a class="nav-item nav-link ml-1" (click)="changeTitle('Catégories')" data-toggle="tab" href="#categories">
+          <i class="fa fa-book"></i>
+          Catégories
+        </a>
+
+
+        <p class="nav-item nav-link move-right mr-3">
+          Bienvenue
+        </p>
+      </div>
+    </div>
+  </nav>
+
+  <!-- main content -->
+  <div class="tab-content mt-3" id="myTabContent">
+
+    <!-- accueil table -->
+    <div class="tab-pane fade show active" id="accueil">
+
+
+      <div class="slider">
+        <input type="radio" name="slider" title="slide1" checked="checked" class="slider__nav"/>
+        <input type="radio" name="slider" title="slide2" class="slider__nav"/>
+        <input type="radio" name="slider" title="slide3" class="slider__nav"/>
+        <input type="radio" name="slider" title="slide4" class="slider__nav"/>
+        <div class="slider__inner">
+          <div (click)="popupDetail(articles[0])" class="slider__contents"><img height="140" width="140" [src]="articles[0].photo ? 'http://localhost:8081/Fichier/' + articles[0].photo.idfichierdb : ''"
+            class="img-fluid img-thumbnail" alt="" />
+            <h2 class="slider__caption">{{ articles[0].titre }}</h2>
+            <p class="slider__txt">{{ articles[0].contenu }}</p>
+          </div>
+
+          <div (click)="popupDetail(articles[1])" class="slider__contents"><img height="140" width="140" [src]="articles[1].photo ? 'http://localhost:8081/Fichier/' + articles[1].photo.idfichierdb : ''"
+            class="img-fluid img-thumbnail" alt="" />
+            <h2 class="slider__caption">{{ articles[1].titre }}</h2>
+            <p class="slider__txt">{{ articles[1].contenu }}</p>
+          </div>
+
+          <div (click)="popupDetail(articles[2])" class="slider__contents"><img height="140" width="140" [src]="articles[0].photo ? 'http://localhost:8081/Fichier/' + articles[2].photo.idfichierdb : ''"
+            class="img-fluid img-thumbnail" alt="" />
+            <h2 class="slider__caption">{{ articles[2].titre }}</h2>
+            <p class="slider__txt">{{ articles[2].contenu }}</p>
+          </div>
+
+          <div (click)="popupDetail(articles[3])" class="slider__contents"><img height="140" width="140" [src]="articles[3].photo ? 'http://localhost:8081/Fichier/' + articles[3].photo.idfichierdb : ''"
+            class="img-fluid img-thumbnail" alt="" />
+            <h2 class="slider__caption">{{ articles[3].titre }}</h2>
+            <p class="slider__txt">{{ articles[3].contenu }}</p>
+          </div>
+
+
+        </div>
+        <label for="slide4" class="slider__prev">&#10094;</label>
+        <label for="slide2" class="slider__next">&#10095;</label>
+      </div>
+
+
+    </div>
+
+
+    <!-- categorie table -->
+    <div class="tab-pane fade" id="categories">
+
+      <section class="testimonials">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="owl-carousel">
+
+                <!-- TÉMOIGNAGE 1 -->
+                <div class="item">
+                  <div class="shadow-effect">
+                    <img class="img-circle" src="http://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt="">
+                    <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
+                  </div>
+                  <div class="testimonial-name">EMILIANO AQUILANI</div>
+                </div>
+                <!-- FIN DU TÉMOIGNAGE 1 -->
+
+                <!-- TÉMOIGNAGE 2 -->
+                <div class="item">
+                  <div class="shadow-effect">
+                    <img class="img-circle" src="http://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt="">
+                    <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
+                  </div>
+                  <div class="testimonial-name">ANNA ITURBE</div>
+                </div>
+                <!-- FIN DU TÉMOIGNAGE 2 -->
+
+                <!-- TÉMOIGNAGE 3 -->
+                <div class="item">
+                  <div class="shadow-effect">
+                    <img class="img-circle" src="http://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt="">
+                    <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
+                  </div>
+                  <div class="testimonial-name">LARA ATKINSON</div>
+                </div>
+                <!-- FIN DU TÉMOIGNAGE 3 -->
+
+                <!-- TÉMOIGNAGE 4 -->
+                <div class="item">
+                  <div class="shadow-effect">
+                    <img class="img-circle" src="http://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt="">
+                    <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
+                  </div>
+                  <div class="testimonial-name">IAN OWEN</div>
+                </div>
+                <!-- FIN DU TÉMOIGNAGE 4 -->
+
+                <!-- TÉMOIGNAGE 5 -->
+                <div class="item">
+                  <div class="shadow-effect">
+                    <img class="img-circle" src="http://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt="">
+                    <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
+                  </div>
+                  <div class="testimonial-name">MICHAEL TEDDY</div>
+                </div>
+                <!-- FIN DU TÉMOIGNAGE 5 -->
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+    </div>
+
+
+
+  </div>

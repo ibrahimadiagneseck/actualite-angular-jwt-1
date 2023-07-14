@@ -1,0 +1,15 @@
+<div class="card-header"
+    style="display: flex; flex-direction: row; top: 0; height: 35%; width: 100%; background-color: #DEC173;">
+    <h3 style="color: rgba(255, 255, 255, 0.86); margin: auto; font-weight: bolder;">Détail de l'article</h3>
+
+    <a class="bouton" (click)="popupFermer()" style="font-size: 24px; cursor: pointer; color: white; margin-right: 5px;">
+      X
+    </a>
+  </div>
+
+<div class="slider__contents"><img height="140" width="140" [src]="article.photo ? 'http://localhost:8081/Fichier/' + article.photo.idfichierdb : ''"
+  class="img-fluid img-thumbnail" alt="" />
+  <h2 class="slider__caption">{{ article.titre }}</h2>
+  <p class="slider__txt">{{ article.contenu }}</p>
+  <p class="slider__txt">création : {{ article.dateCreation }}; modification : {{ article.dateModification }}</p>
+</div>

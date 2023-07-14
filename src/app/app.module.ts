@@ -16,12 +16,14 @@ import { LoginComponent } from './login/login.component';
 
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ActualiteComponent } from './actualite/actualite.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    UserComponent
+    UserComponent,
+    ActualiteComponent
   ],
   imports: [
     BrowserModule,
